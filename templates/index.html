@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis | Portfolio Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="text-center my-5">
+            <h1>Sentiment Analysis</h1>
+            <p class="lead">Analyze the sentiment of any text using machine learning</p>
+        </header>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <form id="sentiment-form" class="mb-4">
+                            <div class="form-group mb-3">
+                                <label for="review-text">Enter text to analyze:</label>
+                                <textarea 
+                                    class="form-control" 
+                                    id="review-text" 
+                                    rows="5" 
+                                    placeholder="Type or paste your text here..."
+                                    required
+                                ></textarea>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-search me-2"></i>Analyze Sentiment
+                                </button>
+                                <button type="button" id="clear-btn" class="btn btn-outline-secondary">
+                                    <i class="fas fa-eraser me-2"></i>Clear
+                                </button>
+                            </div>
+                        </form>
+
+                        <div id="result-container" class="mt-4 d-none">
+                            <h3 class="mb-3">Analysis Result</h3>
+                            <div class="result-card p-4 rounded">
+                                <div class="d-flex align-items-center">
+                                    <div id="sentiment-icon" class="me-3 fs-1">
+                                        <!-- Icon will be inserted here by JS -->
+                                    </div>
+                                    <div>
+                                        <h4 id="sentiment-result" class="mb-2"><!-- Result will be inserted here --></h4>
+                                        <p class="text-muted mb-0">Sentiment analysis prediction</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <h5>Confidence Scores</h5>
+                                    <div class="progress-container">
+                                        <div class="label-container d-flex justify-content-between">
+                                            <span>Positive:</span>
+                                            <span id="positive-score">0%</span>
+                                        </div>
+                                        <div class="progress mb-3">
+                                            <div id="positive-progress" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        
+                                        <div class="label-container d-flex justify-content-between">
+                                            <span>Neutral:</span>
+                                            <span id="neutral-score">0%</span>
+                                        </div>
+                                        <div class="progress mb-3">
+                                            <div id="neutral-progress" class="progress-bar bg-info" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        
+                                        <div class="label-container d-flex justify-content-between">
+                                            <span>Negative:</span>
+                                            <span id="negative-score">0%</span>
+                                        </div>
+                                        <div class="progress mb-3">
+                                            <div id="negative-progress" class="progress-bar bg-danger" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3>About This Project</h3>
+                        <p>This sentiment analysis tool uses machine learning to classify text as positive, neutral, or negative. The model was trained on a dataset of product reviews from the electronics category.</p>
+                        <p>The application utilizes:</p>
+                        <ul>
+                            <li>Natural Language Processing (NLP) techniques for text preprocessing</li>
+                            <li>TF-IDF (Term Frequency-Inverse Document Frequency) for feature extraction</li>
+                            <li>Logistic Regression for classification</li>
+                            <li>Flask for the web application backend</li>
+                            <li>JavaScript and Bootstrap for the frontend</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center my-5">
+            <p>Sentiment Analysis Portfolio Project by Aashish Chauhan &copy; 2024</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
