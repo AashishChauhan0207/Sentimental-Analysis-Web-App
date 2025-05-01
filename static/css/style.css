@@ -1,0 +1,106 @@
+:root {
+    --primary-color: #4a6eb5;
+    --secondary-color: #7a93c9;
+    --positive-color: #28a745;
+    --neutral-color: #17a2b8;
+    --negative-color: #dc3545;
+    --light-bg: #f8f9fa;
+    --dark-text: #343a40;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.result-card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--primary-color);
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+textarea.form-control {
+    resize: none;
+    border-radius: 8px;
+}
+
+textarea.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(74, 110, 181, 0.25);
+}
+
+.positive-result {
+    color: var(--positive-color);
+    border-color: var(--positive-color);
+}
+
+.neutral-result {
+    color: var(--neutral-color);
+    border-color: var(--neutral-color);
+}
+
+.negative-result {
+    color: var(--negative-color);
+    border-color: var(--negative-color);
+}
+
+#sentiment-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+}
+
+footer {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Animation for result container */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-animation {
+    animation: fadeIn 0.5s ease-out;
+} 
